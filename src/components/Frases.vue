@@ -21,7 +21,9 @@
        <br> <br> 
       <span><button v-on:click="Frases6" > Frase 6 </button></span>
      <br> <br> 
-      <input v-model="Misfrases" placeholder="Ingrese frase" />
+      <input v-model="nombrefrase" placeholder="Ingrese frase" />
+      <br> <br> 
+      <input v-model="frase" placeholder="Ingrese frase" />
       <br> <br> 
       <span><button v-on:click="GuardarFrase" > Registrar esta frase </button></span>
     </h6>   
@@ -46,8 +48,8 @@ export default {
   name: "Frases",
   data: function () {
     return {
-      nombreFrase: "Ingrese aquí su frase",
-
+      nombrefrase: "Ingrese aquí su frase",
+      frase: "ingrese frase",
 
       detail:"",
     };
@@ -59,13 +61,13 @@ GuardarFrase: function () {
     this.username = this.$route.params.username;
     
     let bodyIn = {
-      Misfrases: this.Misfrases,
-      username: this.username,
+      nombrefrase: this.nombrefrase,
+      frase: this.frase,
     };
    var self = this;
     axios
-    //  .post("https://finanzas-personales-api2.herokuapp.com/user/phrases/add", bodyIn)
-    .post("http://localhost:8000/DataOut/phrases", bodyIn)
+    .post("http://finanzasapi5.herokuapp.com/DataIn/intfinanciera", bodyIn)
+    //.post("http://localhost:8000/DataOut/phrases", bodyIn)
       .then((result) => {
         self.detail = this.$alert("Tu frase ha sido registrada")
         
