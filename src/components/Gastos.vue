@@ -32,7 +32,7 @@ methods:{
     };
    var self = this;
     axios
-      .post("https://finanzaspersonalesapi.herokuapp.com/DataIn/", bodyIn)
+      .post("https://finanzas-personales-api2.herokuapp.com/DataIn/", bodyIn)
       .then((result) => {
         self.detail = this.$alert("Tu gasto ha sido registrado")
         

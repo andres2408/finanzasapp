@@ -25,7 +25,7 @@ export default {
 
     let self = this;
     axios
-      .get("https://finanzaspersonalesapi.herokuapp.com/DataOut/")
+      .get("https://finanzas-personales-api2.herokuapp.com/DataOut/")
       .then((result) => {
         self.detail = result.data;
       })

@@ -31,7 +31,7 @@ const router = new vueRouter({
                 component: Gastos
             },
             {
-                path: '/DataOut/frase',
+                path: '/DataOut/phrases',
                 name: "Frases",
                 component: Frases
             },

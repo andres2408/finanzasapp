@@ -59,7 +59,7 @@ GuardarFrase: function () {
     this.username = this.$route.params.username;
     
     let bodyIn = {
-      nombreFrase: this.nombreFrase,
+      Misfrases: this.Misfrases,
       username: this.username,
     };
    var self = this;
