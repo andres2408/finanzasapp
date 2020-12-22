@@ -46,26 +46,26 @@ methods: {
     
       getBalance: function(){
         if(this.$route.name != "nombreGasto"){
-         
+          let username = localStorage.getItem("current_username")
          this.$router.push({name: "nombreGasto", params:{ nombreGasto: 'gasto1' }})
         }
       },
 
       getGastos: function(){
         if(this.$route.name != "Gastos"){
-         
-         this.$router.push({name: "Gastos", params:{ username: "camilo24" })
+          let username = localStorage.getItem("current_username")
+         this.$router.push({name: "Gastos", params:{ username: "camilo24" }})
         }
       },
        getFrases: function(){
         if(this.$route.name != "Frases"){
-         
+          let username = localStorage.getItem("current_username")
          this.$router.push({name: "Frases", params:{ Frases: '' }})
         }
       },
        getMostrarFrases: function(){
         if(this.$route.name != "MostrarFrases"){
-         
+          let username = localStorage.getItem("current_username")
          this.$router.push({name: "MostrarFrases", params:{ MostrarFrases: '' }})
         }
       },

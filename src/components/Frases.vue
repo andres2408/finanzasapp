@@ -55,7 +55,7 @@ export default {
 methods:{
 
 GuardarFrase: function () {
-    this.Frases = this.$route.params.Frases;
+    //this.Frases = this.$route.params.Frases;
     this.username = this.$route.params.username;
     
     let bodyIn = {
@@ -64,7 +64,8 @@ GuardarFrase: function () {
     };
    var self = this;
     axios
-      .post("https://finanzas-personales-api2.herokuapp.com/user/phrases/add", bodyIn)
+    //  .post("https://finanzas-personales-api2.herokuapp.com/user/phrases/add", bodyIn)
+    .post("http://localhost:8000/DataOut/phrases", bodyIn)
       .then((result) => {
         self.detail = this.$alert("Tu frase ha sido registrada")
         
