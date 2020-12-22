@@ -6,6 +6,9 @@
     <input v-model="nombreGasto" placeholder="nombre gasto" />
 
     <input v-model.number="valor" type="number" placeholder="valor" />
+    
+       <input v-model="tipoegreso" placeholder="Tipo egreso" />
+
     <span><button v-on:click="GuardarGasto" > Registrar este gasto </button></span>
   </div>
 </template>
@@ -18,17 +21,19 @@ export default {
     return {
       nombreGasto: "Ingrese aquí su gasto",
       valor: "Ingrese aquí el valor de su gasto",
-
+      tipoegreso: "ingrese aquí egreso",
       detail:"",
     };
   },
 methods:{
   GuardarGasto: function () {
-    this.Gastos = this.$route.params.Gastos;
+    this.username = this.$route.params.username;
     
     let bodyIn = {
+      username: this.username,
       nombreGasto: this.nombreGasto,
       valor: this.valor,
+      tipoegreso: this.tipoegreso,
     };
    var self = this;
     axios

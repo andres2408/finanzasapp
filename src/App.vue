@@ -54,7 +54,7 @@ methods: {
       getGastos: function(){
         if(this.$route.name != "Gastos"){
          
-         this.$router.push({name: "Gastos"})
+         this.$router.push({name: "Gastos", params:{ username: "camilo24" })
         }
       },
        getFrases: function(){
