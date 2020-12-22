@@ -64,7 +64,7 @@ GuardarFrase: function () {
     };
    var self = this;
     axios
-      .post("https://finanzaspersonalesapi.herokuapp.com/user/phrases/add", bodyIn)
+      .post("https://finanzas-personales-api2.herokuapp.com/user/phrases/add", bodyIn)
       .then((result) => {
         self.detail = this.$alert("Tu frase ha sido registrada")
         
