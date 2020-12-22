@@ -3,10 +3,9 @@
     <span>Digita tu nuevo gasto:</span>
 
     
-       <input v-model="nombreGasto" placeholder="nombre gasto" />
-       <input v-model="valor" type="number" placeholder="valor" />
-      
+    <input v-model="nombreGasto" placeholder="nombre gasto" />
 
+    <input v-model.number="valor" type="number" placeholder="valor" />
     <span><button v-on:click="GuardarGasto" > Registrar este gasto </button></span>
   </div>
 </template>
@@ -17,29 +16,25 @@ export default {
   name: "Gastos",
   data: function () {
     return {
-  
-      nombreGasto: "Ingrese aquí su gasto",
-      valor: "Ingrese aquí el valor de su gasto",
-    
+      nombreGasto: "elefante",
+      valor: 23444,
+
       detail:"",
     };
   },
 methods:{
   GuardarGasto: function () {
-    this.username = this.$route.params.username;
+    this.Gastos = this.$route.params.Gastos;
     
     let bodyIn = {
-
       nombreGasto: this.nombreGasto,
       valor: this.valor,
-    
     };
    var self = this;
     axios
-   .post("http://finanzaspersonalesapi.herokuapp.com/DataIn/", bodyIn)
-   // .post("http://localhost:8000/user/expenses/add", bodyIn)
+      .post("https://finanzaspersonalesapi.herokuapp.com/DataIn/", bodyIn)
       .then((result) => {
-        self.detail = this.$alert("Tu gasto ha sido registrado")
+        self.detail = this.$alert("tu gasto ha sido registrado")
         
       })
       .catch((error) => {
